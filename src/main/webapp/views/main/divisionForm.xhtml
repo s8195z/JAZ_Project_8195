@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+     <h:form id="divisionform">
+        <h:panelGrid columns="3">
+
+            <h:outputText value="#{msg.nameLabel}" />
+            <h:inputText id="name" value="#{divisionBean.division.name}" size="20">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="name" style="color:red" />
+            
+            <h:outputText value="#{msg.descriptionLabel}" />
+            <h:inputTextarea id="description" value="#{divisionBean.division.description}" cols="40" rows="25" >
+                <f:validateRequired />
+            </h:inputTextarea>
+            <h:messages for="description" style="color:red" />
+            
+            <h:outputText value="#{msg.employeeNumberLabel}" />
+            <h:inputText id="employeeNumber" value="#{divisionBean.division.employeeNumber}" size="10" >
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="employeeNumber" style="color:red" />
+            
+             <h:outputText value="#{msg.costsLabel}" />
+             <h:inputText id="costs" value="#{divisionBean.division.costs}" size="10" >
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="costs" style="color:red" />
+        </h:panelGrid>
+        <p>
+            <h:commandButton value="#{msg.save}" action="#{divisionBean.merge}" />
+        </p>
+     </h:form>
+</ui:composition>
+
